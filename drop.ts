@@ -14,7 +14,7 @@ const getDelegators_tzkt = async () => {
  // })
 
   return delegators.map((delegator: any) => {
-    return delegator.address
+    return delegator.address.100
   })
 }
 
