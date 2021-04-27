@@ -46,8 +46,10 @@ const main = async () => {
 
   const drops: Array<AirDrop> = []
   console.log('BEGIN PARSING');
-  fs.readFileSync(DISTRIBUTION_FILE, 'utf-8').split(/\r?\n/).forEach(function (line) { console.log(line) //added console.log(line) to end.
-  console.log('END PARSING');
+  fs.readFileSync(DISTRIBUTION_FILE, 'utf-8').split(/\r?\n/).forEach(function (line) {
+    if (line.trim().length === 0) {
+      return;
+    }
     const split = line.split(',')
     const trimmed = split.map((input) => {
       return input.trim()
