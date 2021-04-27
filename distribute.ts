@@ -81,8 +81,12 @@ const main = async () => {
       console.log(`>> Sending ${drop.amount} to ${drop.address}`)
 
       // this version for FA1.2 const result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
-      const result = await tokenContract.methods.transfer(await signer.publicKeyHash(), [drop.address, "0", drop.amount]).send({ amount: 0, mutez: true })
-
+    {
+  const result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
+} catch (e)
+{
+  console.log(e);
+}
       console.log(`>> Sent in hash ${result.hash}. Waiting for 1 confirmation.`)
 
       await result.confirmation(1)
