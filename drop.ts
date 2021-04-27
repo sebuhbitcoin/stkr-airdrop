@@ -2,7 +2,7 @@ import * as WebRequest from 'web-request'
 import { TezosToolkit } from '@taquito/taquito'
 import * as fs from 'fs';
 
-// Get voters for VOTING_PERIOD from TzKt.
+// Get delegators for Sebuh.net Bakery from TzKt.
 const getDelegators_tzkt = async () => {
   const apiUrl = `https://api.tzkt.io/v1/accounts/tz1R664EP6wjcM1RSUVJ7nrJisTpBW9QyJzP/delegators?limit=1000` 
   const result: any = await WebRequest.get(apiUrl)
