@@ -83,7 +83,7 @@ const main = async () => {
       
    
      // this version for FA1.2 const result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
-let result = null;
+let result = {};
 try {
   result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
   console.log(JSON.stringify(result, null, 2));
