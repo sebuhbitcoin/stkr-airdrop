@@ -10,7 +10,7 @@ const NODE_URL = "https://testnet-tezos.giganode.io" //
 const CONTRACT_ADDRESS = "KT1WKEoX5fh3uDxd5MsMUagsV3KTwRukauCt" 
 
 // Load private key - lol its a testnet private key dont even try n jack me. kek
-const privateKeyName = 'edskRhvYDofJ6vbqEcTaS4xBFFjUiAHvWASZcnE7LX6H1Xaw936EZGpnYAJ4W8fr8H7QuZe8sfBnmewC1BWdUYLV7WewSvSeAD'
+const privateKeyName = 'SEB_PRIVATE_KEY'
 const privateKey = process.env[privateKeyName]
 if (privateKey === undefined) {
   console.log('Fatal: No deployer private key defined.')
