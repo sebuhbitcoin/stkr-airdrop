@@ -3,18 +3,18 @@ import { TezosToolkit } from '@taquito/taquito'
 import * as fs from 'fs';
 
 // Get voters for VOTING_PERIOD from TzKt.
-const getVoters_tzkt = async () => {
+const getDelegators_tzkt = async () => {
   const apiUrl = `https://api.tzkt.io/v1/accounts/tz1R664EP6wjcM1RSUVJ7nrJisTpBW9QyJzP/delegators?limit=1000` 
   const result: any = await WebRequest.get(apiUrl)
 
-  const voters = JSON.parse(result.message.body)
+  const delegators = JSON.parse(result.message.body)
 
-  const votingVoters = voters.filter((voter: any) => {
-    return voter.status !== "none"
+ // const votingVoters = voters.filter((voter: any) => {
+    //return voter.status !== "none"
   })
 
-  return votingVoters.map((voter: any) => {
-    return voter.delegate.address
+  return delegators.map((delegator: any) => {
+    return delegator.address
   })
 }
 
@@ -64,8 +64,8 @@ const main = async () => {
   console.log("")
 
   // Get Voters
-  console.log("> Getting Voters")
-  const voters_tzkt = (await getVoters_tzkt()).sort()
+  console.log("> Getting Delegators")
+  const delegators_tzkt = (await getDelegators_tzkt()).sort()
  // const voters_tzStats = (await getVoters_tzStats()).sort()
   console.log("> Done")
 
@@ -92,15 +92,15 @@ const main = async () => {
  // console.log(``)
 
   // Write voters to file.
-  console.log("> Writing voter data.")
-  const voterFile = "voters.csv"
-  if (fs.existsSync(voterFile)) {
-    fs.unlinkSync(voterFile)
-  } fs.writeFileSync(voterFile, `baker address,\n`)
-  for (let i = 0; i < voters_tzkt.length; i++) {
-    fs.appendFileSync(voterFile, `${voters_tzkt[i]},\n`)
+  console.log("> Writing Delegators data.")
+  const delegatorsFile = "Delegators.csv"
+  if (fs.existsSync(delegatorsFile)) {
+    fs.unlinkSync(delegatorsFile)
+  } fs.writeFileSync(delegatorsFile, `baker address,\n`)
+  for (let i = 0; i < delegators_tzkt.length; i++) {
+    fs.appendFileSync(delegatorsFile, `${delegators_tzkt[i]},\n`)
   }
-  console.log(`> Written to ${voterFile}`)
+  console.log(`> Written to ${delegatorsFile}`)
   console.log("")
 
   // Write voters to file.
