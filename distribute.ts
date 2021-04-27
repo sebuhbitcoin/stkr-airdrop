@@ -61,9 +61,9 @@ const main = async () => {
   }, new BigNumber("0"))
 
   // Sanity Check
-  console.log("> About to distribute " + total.toFixed() + " STRK?")
-  console.log("> Sleeping for 120secs while you ponder that.")
-  await Utils.sleep(120)
+  console.log("> About to distribute " + total.toFixed() + " SEB?")
+  console.log("> Sleeping for 5secs while you ponder that.")
+  await Utils.sleep(5)
 
   // Get contract
   const tokenContract = await tezos.contract.at(CONTRACT_ADDRESS)
