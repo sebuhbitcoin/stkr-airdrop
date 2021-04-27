@@ -6,8 +6,8 @@ import { InMemorySigner } from '@taquito/signer';
 import * as fs from 'fs';
 
 const DISTRIBUTION_FILE = "airdrop.csv"
-const NODE_URL = "https://delphinet.smartpy.io/" // "https://mainnet-tezos.giganode.io"
-const CONTRACT_ADDRESS = "KT19UypipJWENBavh34Wn7tc67bL1HucZh9W" //"KT1AEfeckNbdEYwaMKkytBwPJPycz7jdSGea"
+const NODE_URL = "https://mainnet-tezos.giganode.io" // 
+const CONTRACT_ADDRESS = "KT1981tPmXh4KrUQKZpQKb55kREX7QGJcF3E" //"KT1AEfeckNbdEYwaMKkytBwPJPycz7jdSGea"
 
 // Load private key
 const privateKeyName = 'STKR_AIRDROP_PRIVATE_KEY'
