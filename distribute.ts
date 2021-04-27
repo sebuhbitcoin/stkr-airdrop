@@ -85,7 +85,7 @@ const main = async () => {
      // this version for FA1.2 const result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
 
 try {
-  let result = {hash: '', confirmation: (val) => Promise.resolve(val) }
+  let result = {hash: '', confirmation: (val: number) => Promise.resolve(val) }
   result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
   console.log(JSON.stringify(result, null, 2));
   console.log(`>> Sent in hash ${result.hash}. Waiting for 1 confirmation.`)
@@ -97,12 +97,12 @@ try {
   console.log(e);
 }
 
-      
-      console.log(`>> Sent in hash ${result.hash}. Waiting for 1 confirmation.`)
-
-      await result.confirmation(1)
-      console.log(`>> Confirmed.`)
-      console.log(``)
+   //   removed
+   //   console.log(`>> Sent in hash ${result.hash}. Waiting for 1 confirmation.`)
+//
+  //    await result.confirmation(1)
+   //   console.log(`>> Confirmed.`)
+   //   console.log(``)
 
       completedOps.push({
         address: drop.address,
