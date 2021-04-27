@@ -81,11 +81,13 @@ const main = async () => {
       console.log(`>> Sending ${drop.amount} to ${drop.address}`)
 
       
-      // this version for FA1.2 const result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
+   
+     // this version for FA1.2 const result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
+let result = null;
 try {
-  const result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
-} catch (e)
-{
+  result = await tokenContract.methods.transfer(await signer.publicKeyHash(), drop.address, drop.amount).send({ amount: 0, mutez: true })
+  console.log(JSON.stringify(result, null, 2));
+} catch (e) {
   console.log(e);
 }
 
