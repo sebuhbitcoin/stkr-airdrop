@@ -5,12 +5,12 @@ import { TezosToolkit } from '@taquito/taquito'
 import { InMemorySigner } from '@taquito/signer';
 import * as fs from 'fs';
 
-const DISTRIBUTION_FILE = "airdrop.csv"
-const NODE_URL = "https://mainnet-tezos.giganode.io" // 
-const CONTRACT_ADDRESS = "KT1981tPmXh4KrUQKZpQKb55kREX7QGJcF3E" //"KT1AEfeckNbdEYwaMKkytBwPJPycz7jdSGea"
+const DISTRIBUTION_FILE = "Delegators.csv"
+const NODE_URL = "https://testnet-tezos.giganode.io" // 
+const CONTRACT_ADDRESS = "KT1WKEoX5fh3uDxd5MsMUagsV3KTwRukauCt" 
 
-// Load private key
-const privateKeyName = 'STKR_AIRDROP_PRIVATE_KEY'
+// Load private key - lol its a testnet private key dont even try n jack me. kek
+const privateKeyName = 'edskRhvYDofJ6vbqEcTaS4xBFFjUiAHvWASZcnE7LX6H1Xaw936EZGpnYAJ4W8fr8H7QuZe8sfBnmewC1BWdUYLV7WewSvSeAD'
 const privateKey = process.env[privateKeyName]
 if (privateKey === undefined) {
   console.log('Fatal: No deployer private key defined.')
