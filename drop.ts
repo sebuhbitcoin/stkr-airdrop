@@ -11,7 +11,7 @@ const getDelegators_tzkt = async () => {
 
  // const votingVoters = voters.filter((voter: any) => {
     //return voter.status !== "none"
-  })
+ // })
 
   return delegators.map((delegator: any) => {
     return delegator.address
